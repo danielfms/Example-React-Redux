@@ -1,5 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
 import { User } from './../components/User';
 import { Main } from './../components/Main';
 import {setName} from "../actions/userActions";
@@ -23,11 +24,14 @@ const mapStateToProps = (state) =>{
 };
 
 const mapDispatchToProps = (dispatch) =>{
-    return {
-        setName: (name) =>{
-            dispatch(setName(name))
-        }
-    };
+    return bindActionCreators({
+        setName
+    }, dispatch)
+    // return {
+    //     setName: (name) =>{
+    //         dispatch(setName(name))
+    //     }
+    //};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
