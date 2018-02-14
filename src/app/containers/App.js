@@ -13,7 +13,9 @@ class App extends React.Component {
                 <User username={this.props.user.name}
                     changeUserAge={ () => {this.props.setAge(30);
                         //Test socketListener in several files
-                        this.props.subtractNumber(45);
+                        this.props.subtractNumber(45).then((result) => {
+                            console.log("Promise answer: ", result);
+                        });
                     }}
                 />
             </div>
@@ -29,16 +31,22 @@ const mapStateToProps = (state) =>{
 };
 
 const mapDispatchToProps = (dispatch) =>{
-    return bindActionCreators({
-        setName,
-        setAge,
-        subtractNumber
-    }, dispatch)
-    // return {
-    //     setName: (name) =>{
-    //         dispatch(setName(name))
-    //     }
-    //};
+    // return bindActionCreators({
+    //     setName,
+    //     setAge,
+    //     subtractNumber
+    // }, dispatch)
+    return {
+        setName: (name) =>{
+            dispatch(setName(name))
+        },
+        setAge: (age) =>{
+            dispatch(setAge(name))
+        },
+        subtractNumber: (number) => {
+            return dispatch(subtractNumber(number));
+        }
+    };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
