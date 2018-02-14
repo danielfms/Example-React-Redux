@@ -5,3 +5,4 @@
 # Posts
 * Real time data flow with Redux and Socket.io : http://spraso.com/real-time-data-flow-with-redux-and-socket-io/
 * Handling outside events with the Redux Listener Pattern : https://community.risingstack.com/handling-outside-events-with-the-redux-listener-pattern/
+* Return Promise in action: https://github.com/gaearon/redux-thunk/blob/master/README.md
