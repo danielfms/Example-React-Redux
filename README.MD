@@ -1,4 +1,4 @@
-#Branches
+# Branches
 * master: socketMiddleware
 * socket-listener: socketListener, redux-thunk, action returns Promise
 
