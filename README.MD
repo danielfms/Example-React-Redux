@@ -3,4 +3,5 @@
 * React JS / Redux Tutorials [thenewboston] : https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBbSLZjvleMwldX8jGgXV6a
 
 # Posts
-* http://spraso.com/real-time-data-flow-with-redux-and-socket-io/
+* Real time data flow with Redux and Socket.io : http://spraso.com/real-time-data-flow-with-redux-and-socket-io/
+* Handling outside events with the Redux Listener Pattern : https://community.risingstack.com/handling-outside-events-with-the-redux-listener-pattern/
