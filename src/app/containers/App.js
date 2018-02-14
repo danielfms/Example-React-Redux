@@ -4,14 +4,17 @@ import {bindActionCreators} from "redux";
 import { User } from './../components/User';
 import { Main } from './../components/Main';
 import {setName, setAge} from "../actions/userActions";
-
+import {subtractNumber} from "../actions/mathActions";
 class App extends React.Component {
     render() {
         return (
             <div className="container">
                 <Main changeUsername={ () => {this.props.setName("Felipe")}}/>
                 <User username={this.props.user.name}
-                    changeUserAge={ () => {this.props.setAge(30);}}
+                    changeUserAge={ () => {this.props.setAge(30);
+                        //Test socketListener in several files
+                        this.props.subtractNumber(45);
+                    }}
                 />
             </div>
         );
@@ -28,7 +31,8 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps = (dispatch) =>{
     return bindActionCreators({
         setName,
-        setAge
+        setAge,
+        subtractNumber
     }, dispatch)
     // return {
     //     setName: (name) =>{
