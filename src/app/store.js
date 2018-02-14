@@ -2,8 +2,7 @@ import {createStore, combineReducers, applyMiddleware} from "redux";
 import createLogger from "redux-logger";
 import thunkMiddleware from "redux-thunk";
 import promiseMiddleware from "redux-promise-middleware";
-
-import startSocket, {socketMiddleware} from './socket/socketMiddleware';
+import addSocketListeners from "./socket/socketListeners";
 
 import math from "./reducers/mathReducer";
 import user from "./reducers/userReducer";
@@ -14,9 +13,9 @@ const store =  createStore(
          user
         }),
     {},
-    applyMiddleware(createLogger, thunkMiddleware, promiseMiddleware(), socketMiddleware)
+    applyMiddleware(createLogger, thunkMiddleware, promiseMiddleware())
 );
 
-startSocket(store);
+addSocketListeners(store.dispatch, store.getState);
 
 export default store;

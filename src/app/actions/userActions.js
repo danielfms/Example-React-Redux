@@ -1,3 +1,4 @@
+import {socket} from "./../socket/socketListeners";
 export const SET_NAME = "SET_NAME";
 export const SET_AGE = "SET_AGE";
 
@@ -21,8 +22,12 @@ export function setName(name){
 };
 
 export function setAge(age){
-    return {
-        type: SET_AGE,
-        payload: age
+    // return {
+    //     type: SET_AGE,
+    //     payload: age
+    // }
+    return (dispatch) => {
+        socket.emit("message", {type: SET_AGE, payload: age});
     }
 }
+
